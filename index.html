@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaurav Dixit | Full Stack Web Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("0Jd0ZTHaKRC0W9q2N");
+    })();
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, black, indigo);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+    header { background: #0f172a; padding: 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+    nav .logo { font-size: 1.8rem; font-weight: bold; color: #00e5ff; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      transition: 0.3s ease;
+    }
+    nav ul li a:hover { color: #00e5ff; }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero, .about {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .hero .text, .about .text { flex: 1; min-width: 300px; }
+    .about .image { flex: 1; min-width: 300px; margin-right: 40px; }
+
+    .hero .text h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .hero .text span, .about .text span { color: #00e5ff; }
+    .hero .text p, .about .text p { max-width: 500px; margin: 20px 0; }
+    .hero .icons a { margin-right: 15px; transition: transform 0.3s; }
+    .hero .icons a:hover { transform: scale(1.1); }
+
+    .hero .image img, .about .image img, .portfolio .project-gallery img {
+      max-width: 250px;
+      border: 5px solid #00e5ff;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #00e5ff;
+      animation: float 3s ease-in-out infinite;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    .portfolio .project-gallery img {
+      width: 100%;
+      margin: 0 auto;
+      display: block;
+    }
+    .hero .image img:hover, .about .image img:hover, .portfolio .project-gallery img:hover {
+      transform: scale(1.1) rotate(2deg);
+      box-shadow: 0 0 30px #00e5ff;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #00e5ff;
+      color: #0f172a;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.3);
+      transform: skewX(-45deg);
+      transition: left 0.5s;
+    }
+    .btn:hover {
+      transform: scale(1.1);
+    }
+    .btn:hover::before {
+      left: 200%;
+    }
+
+    .about .text h2 { font-size: 2rem; }
+    .about .text h3 { color: #00e5ff; margin-top: 10px; }
+
+    .services, .portfolio, .contact-info {
+      text-align: center;
+    }
+
+    .services .project-gallery, .portfolio .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .services .project-gallery div {
+      padding: 20px;
+      background: #1e293b;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .services .project-gallery div:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+
+    form {
+      max-width: 500px;
+      margin: 30px auto;
+      text-align: left;
+      animation: fadeInUp 2s ease forwards;
+      opacity: 0;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      font-family: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    form input:focus, form textarea:focus {
+      transform: scale(1.02);
+      box-shadow: 0 0 10px #00e5ff;
+      outline: none;
+    }
+    form button {
+      background: #00e5ff;
+      color: #0f172a;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    form button:hover {
+      background: #0ea5e9;
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0f172a;
+      color: #94a3b8;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+  </style>
+<style>
+    .floating-panel {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00e5ff;
+      max-width: 600px;
+      z-index: 9999;
+      display: none;
+      animation: fadeInUp 0.5s ease;
+    }
+    .floating-panel p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    .floating-panel .close-btn {
+      background: #00e5ff;
+      color: #0f172a;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      float: right;
+      margin-top: 15px;
+    }
+</style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="text">
+      <h1>Hello, It's Me<br><strong>Gaurav Dixit</strong><br>And I'm a <span>Full Stack Web Developer</span></h1>
+      <p>I specialize in building modern, scalable web applications with beautiful front-end and robust back-end systems.</p>
+      <div class="icons">
+        <a href="https://www.facebook.com/profile.php?id=100070377608503"><img src="https://img.icons8.com/ios-filled/30/00e5ff/facebook-new.png"/></a>
+        <a href="https://www.instagram.com/g_dixit_28"><img src="https://img.icons8.com/ios-filled/30/00e5ff/instagram.png" alt="Instagram icon"/></a>
+        <a href="https://github.com/gaurav-dixit35"><img src="https://img.icons8.com/ios-filled/30/00e5ff/github.png"/></a>
+        <a href="https://www.linkedin.com/in/gaurav-dixit-3b0164229/"><img src="https://img.icons8.com/ios-filled/30/00e5ff/linkedin.png"/></a>
+      </div>
+      <a href="https://lavender-ruthanne-43.tiiny.site" class="btn">Download CV</a>
+    </div>
+    <div class="image">
+      <img src="https://i.postimg.cc/Jz6Pjmqd/me.png" alt="Profile" />
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="image">
+      <img src="https://i.postimg.cc/gkb3DpY2/me2.jpg" alt="About" />
+    </div>
+    <div class="text">
+      <h2>About <span>Me</span></h2>
+      <h3>Frontend Developer & Backend Enthusiast!</h3>
+      <p>Passionate about creating beautiful, user-friendly websites and powerful back-end systems. I love turning ideas into reality using code and design.</p>
+      <a href="#" class="btn" onclick="showAboutDetails(event)">Read More</a>
+<div class="floating-panel" id="aboutPanel">
+  <p>I'm a dedicated Full Stack Developer with a strong grasp of both frontend and backend technologies. I specialize in building dynamic, responsive web applications using HTML, CSS, JavaScript, and PHP. My experience includes developing complete web solutions like Gyan Bhandar, an online bookstore featuring user authentication, real-time notifications, shopping cart functionality, and an admin dashboard.</p>
+  <p>I enjoy bridging the gap between elegant design and practical functionality. With a passion for clean code, performance, and continuous learning, I strive to deliver scalable and maintainable solutions. I'm always looking for opportunities to grow as a developer and contribute to impactful projects.</p>
+  <button class="close-btn" onclick="hideAboutDetails()">Close</button>
+</div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <h2>My <span>Services</span></h2>
+    <p>I offer end-to-end web development services with modern and scalable technology stacks.</p>
+    <div class="project-gallery">
+      <div><h4>Web Development</h4><p>Building modern, responsive websites using front-end and back-end technologies.</p></div>
+      <div><h4>UI/UX Design</h4><p>Designing user-friendly interfaces and experiences that keep users engaged.</p></div>
+      <div><h4>Custom Projects</h4><p>Tailored web solutions for specific needs, including automation and APIs.</p></div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio" id="project">
+    <h2>Latest <span>Projects</span></h2>
+    <h3 style="margin-top:20px; color:#00e5ff;">Gyan Bhandar, A Book Store Website</h3>
+    <p style="max-width:800px; margin: 10px auto 30px;">Gyan Bhandar is an online bookstore offering a wide range of academic, fiction, and non-fiction titles. The platform provides a seamless browsing and purchasing experience for book lovers.</p>
+    <div class="project-gallery">
+      <img src="https://i.postimg.cc/SKz4RSL4/Screenshot-2025-05-10-191701.png" alt="Project 1" />
+      <img src="https://i.postimg.cc/RhS274tN/Screenshot-2025-05-10-191740.png" alt="Project 2" />
+      <img src="https://i.postimg.cc/bw7M6QbX/Screenshot-2025-05-10-191758.png" alt="Project 3" />
+      <img src="https://i.postimg.cc/Y0Cy48cF/Screenshot-2025-05-10-191931.png" alt="Project 4" />
+      <img src="https://i.postimg.cc/1z0WJbs6/Screenshot-2025-05-10-191822.png" alt="Project 5" />
+    </div>
+    <p>For additional projects and contributions, please visit my <a href="https://github.com/gaurav-dixit35" class="highlight" target="_blank">GitHub Profile</a>.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-info" id="contact">
+    <h2>Contact <span>Me!</span></h2>
+    <p>Email: <a href="mailto:gd36990@gmail.com" class="highlight">gd36990@gmail.com</a></p>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Gaurav Dixit. All Rights Reserved.
+  </footer>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      emailjs.sendForm('service_jzqthiu', 'template_z9j9zvc', this)
+        .then(() => {
+          alert('Message sent successfully!');
+          this.reset();
+        }, (err) => {
+          alert('Failed to send message.\n' + JSON.stringify(err));
+        });
+    });
+  </script>
+<script>
+  function showAboutDetails(e) {
+    e.preventDefault();
+    document.getElementById('aboutPanel').style.display = 'block';
+  }
+  function hideAboutDetails() {
+    document.getElementById('aboutPanel').style.display = 'none';
+  }
+</script>
+</body>
+</html>
