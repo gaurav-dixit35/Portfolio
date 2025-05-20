@@ -67,15 +67,14 @@ Let’s build something together! If you’re looking for a **dedicated develope
 ## 🏆 Why Hire Me?
 
 - 🎯 **Client-Focused**: I understand business needs and translate them into technical solutions.
-- 
+  
 - 🧠 **Problem Solver**: I enjoy debugging, optimizing, and enhancing systems.
-- 
+  
 - 📈 **Growth-Oriented**: I constantly learn new technologies and best practices.
-- 
+  
 - 💬 **Good Communicator**: Timely updates, clean documentation, and responsive to feedback.
-- 
+  
 - ⏱ **On-Time Delivery**: Respect for deadlines and project scope.
-- 
+  
 > Whether you're a startup founder, a business owner, or a recruiter — let’s connect and build something remarkable together.
-> 
 **📣 Ready to turn your idea into reality? I'm just one message away!**
