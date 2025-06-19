@@ -217,8 +217,84 @@
       margin-top: 15px;
     }
 </style>
+<style>
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  padding: 10px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-16 {
+  display: flex;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+}
+
+.nav-16 a {
+  color: #0ff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-16 a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #0ff;
+  transition: width 0.4s ease;
+  border-radius: 2px;
+}
+
+.nav-16 a:hover {
+  color: #fff;
+}
+
+.nav-16 a:hover::after {
+  width: 100%;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+</style>
 </head>
 <body>
+  <header>
+    <div class="container">
+      <nav class="nav-16">
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="#services"><i class="fas fa-briefcase"></i> Services</a>
+        <a href="#project"><i class="fas fa-cogs"></i> Projects</a>
+        <a href="#skills"><i class="fas fa-lightbulb"></i> Skills</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      </nav>
+    </div>
+  </header>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <!-- Hero Section -->
   <section class="hero" id="home">
   <div class="text">
