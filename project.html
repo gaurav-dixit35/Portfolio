@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gaurav Dixit | Projects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, black, indigo);
+      color: #ffffff;
+      padding-bottom: 50px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: transparent;
+      padding: 20px 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-16 {
+      display: flex;
+      gap: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem 2rem;
+      border-radius: 2rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+      border: 1px solid rgba(0, 255, 255, 0.15);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-16 a {
+      color: #0ff;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1rem;
+      position: relative;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-16 a::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: #0ff;
+      transition: width 0.4s ease;
+      border-radius: 2px;
+    }
+
+    .nav-16 a:hover {
+      color: #fff;
+    }
+
+    .nav-16 a:hover::after {
+      width: 100%;
+    }
+
+    h4 {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 1.8rem;
+      color: #00e5ff;
+    }
+
+    .project-section {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .project-card {
+      display: flex;
+      width: 100%;
+      max-width: 1100px;
+      height: 170px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+      flex-wrap: nowrap;
+      text-decoration: none;
+      color: inherit;
+      margin: auto;
+    }
+
+    .project-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .project-image {
+      flex: 1;
+      min-width: 250px;
+      height: 100%;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-content {
+      flex: 2;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .project-content h2 {
+      color: #00e5ff;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .project-content p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    .tech-icons {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+      grid-auto-flow: column;
+      grid-template-rows: repeat(3, auto);
+      gap: 15px;
+      padding: 20px;
+      justify-content: center;
+      align-items: center;
+      width: 20%;
+    }
+
+    .tech-icons img {
+      width: 40px;
+      height: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-16 a {
+        font-size: 0.95rem;
+      }
+      .project-card {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+      }
+      .project-image,
+      .project-content,
+      .tech-icons {
+        width: 100%;
+      }
+      .project-content {
+        text-align: center;
+        padding: 15px;
+      }
+      .project-content h2 {
+        font-size: 1.3rem;
+      }
+      .tech-icons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(auto-fit, 40px);
+        grid-template-rows: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav class="nav-16">
+        <a href="index.html#home"><i class="fas fa-home"></i> Home</a>
+        <a href="index.html#about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="index.html#services"><i class="fas fa-briefcase"></i> Services</a>
+        <a href="index.html#project"><i class="fas fa-cogs"></i> Projects</a>
+        <a href="index.html#skills"><i class="fas fa-lightbulb"></i> Skills</a>
+        <a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <h4>These are a few of the projects I made or was part of —</h4>
+
+  <div class="project-section">
+    <a class="project-card" href="https://gaurav-dixit35.github.io/GyanBhandar/" target="_blank">
+    <div class="project-image">
+        <img src="https://i.postimg.cc/SKz4RSL4/Screenshot-2025-05-10-191701.png" alt="Gyan Bhandar" />
+    </div>
+    <div class="project-content">
+        <h2>Gyan Bhandar</h2>
+        <p>Gyan Bhandar is an online bookstore offering a wide range of academic, fiction, and non-fiction titles. The platform provides a seamless browsing and purchasing experience for book lovers.</p>
+    </div>
+    <div class="tech-icons">
+        <img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML"/>
+        <img src="https://img.icons8.com/color/48/css3.png" alt="CSS"/>
+        <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript"/>
+    </div>
+    </a>
+    <a class="project-card" href="https://gaurav-dixit35.github.io/gd-Restaurant/" target="_blank">
+    <div class="project-image">
+        <img src="https://i.postimg.cc/pVBV9qVs/Screenshot-2025-06-20-030234.png" alt="GD's Restaurant" />
+    </div>
+    <div class="project-content">
+        <h2>GD's Restaurant</h2>
+        <p>GD’s Restaurant is a Table Booking website with an elegant layout, interactive menu, and smooth navigation—designed to deliver a modern and engaging dining experience online.</p>
+    </div>
+    <div class="tech-icons">
+        <img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML"/>
+        <img src="https://img.icons8.com/color/48/css3.png" alt="CSS"/>
+        <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript"/>
+    </div>
+    </a>
+     <a class="project-card" href="https://advancedcalculator-7ca2b.web.app/" target="_blank">
+    <div class="project-image">
+        <img src="https://i.postimg.cc/kXrN4M4Q/calc.png" alt="Advanced Calculator" />
+    </div>
+    <div class="project-content">
+        <h2>Advance Calculator</h2>
+        <p>Advanced Calculator is a responsive web app with both basic and scientific modes. It features dark mode, voice input, graph plotting, unit conversion, and CSV export.</p>
+    </div>
+    <div class="tech-icons">
+        <img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML"/>
+        <img src="https://img.icons8.com/color/48/css3.png" alt="CSS"/>
+        <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript"/>
+        <img src="https://img.icons8.com/color/48/nodejs.png" alt="nodejs"/>
+
+    </div>
+    </a>
+    <a class="project-card" href="https://vibecurser.netlify.app/" target="_blank">
+    <div class="project-image">
+        <img src="https://i.postimg.cc/fLBFstZf/cur.png" alt="Vibe Cursor" />
+    </div>
+    <div class="project-content">
+        <h2>Vibe Cursor</h2>
+        <p>Vibe Cursor is a full-screen interactive canvas using HTML5, CSS3, and JavaScript that reacts to mouse movements. It combines audio interactivity and particle motion for a futuristic, ambient visual experience.</p>
+    </div>
+    <div class="tech-icons">
+        <img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML"/>
+        <img src="https://img.icons8.com/color/48/css3.png" alt="CSS"/>
+        <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript"/>
+    </div>
+    </a>
+    <a class="project-card" href="https://gaurav-dixit35.github.io/ExpressionBox/" target="_blank">
+    <div class="project-image">
+        <img src="https://i.postimg.cc/pd1G1NBs/e.jpg" alt="Expression Box" />
+    </div>
+    <div class="project-content">
+        <h2>Expression Box</h2>
+        <p>Expression Box is a responsive, interactive web page that delivers heartfelt thank-you messages in a creative, animated way. It features changing logos, dynamic backgrounds, emoji rain, and emotional storytelling.</p>
+    </div>
+    <div class="tech-icons">
+        <img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML"/>
+        <img src="https://img.icons8.com/color/48/css3.png" alt="CSS"/>
+        <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript"/>
+    </div>
+    </a>
+    <p style="text-align: center;">
+        For additional projects and contributions, please visit my 
+        <a href="https://github.com/gaurav-dixit35" class="highlight" target="_blank">GitHub Profile</a>.
+    </p>
+
+  </div>
+
+</body>
+</html>
