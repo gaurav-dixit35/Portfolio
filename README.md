@@ -4,6 +4,11 @@ Welcome to my portfolio website — a live demonstration of my **skills**, **cre
 
 I help individuals, startups, and growing businesses bring their ideas to life through **modern, scalable, and user-friendly websites**. From elegant frontend interfaces to robust backend solutions, I deliver complete web systems that drive real results.
 
+## 📄 Resume / CV
+
+📥 **[Download My CV](https://lavender-ruthanne-43.tiiny.site)**  
+Clear and concise overview of my skills, tools, experience, and education.
+
 ## About Me
 
 I’m **Gaurav Dixit**, a passionate Full Stack Developer with a keen eye for detail and a love for clean, scalable code. I specialize in:
@@ -48,11 +53,6 @@ Professional, fast-loading websites to showcase brands, products, or services.
 - ✅ Beautiful and Intuitive UI  
 
 📌 Built using: **HTML, CSS, JavaScript**
-
-## 📄 Resume / CV
-
-📥 **[Download My CV](https://lavender-ruthanne-43.tiiny.site)**  
-Clear and concise overview of my skills, tools, experience, and education.
 
 ## 📬 Contact Me
 
