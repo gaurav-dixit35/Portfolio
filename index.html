@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gaurav Dixit | Full Stack Web Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     (function() {
       emailjs.init("0Jd0ZTHaKRC0W9q2N");
@@ -486,7 +486,7 @@ html {
   <script>
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      emailjs.sendForm('service_jzqthiu', 'template_z9j9zvc', this)
+      emailjs.sendForm('service_jzqthiu', 'template_74g5vhq', this)
         .then(() => {
           alert('Message sent successfully!');
           this.reset();
