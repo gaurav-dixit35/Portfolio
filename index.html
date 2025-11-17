@@ -56,7 +56,6 @@
   transition: 0.4s;
 }
 
-/* Sidebar Navigation */
 .nav-16 {
   position: absolute;
   right: 10px;
@@ -65,34 +64,54 @@
   padding: 20px;
   background: rgba(0, 0, 20, 0.9);
   border-radius: 20px;
-  display: none;
+  display: none;  /* Hidden by default */
   flex-direction: column;
   gap: 20px;
   transition: all 0.4s ease-in-out;
 }
 
-/* Show menu when active */
 .nav-16.active {
-  display: flex;
+  display: flex; /* Open when toggled */
 }
 
+
 /* ANIMATION — Hamburger becomes X */
+.menu-toggle {
+  transition: 0.5s ease;
+}
+
+.menu-toggle.active {
+  transform: rotate(360deg);
+}
+
+.menu-toggle span {
+  transition: 0.5s;
+  box-shadow: 0 0 10px #0ff;
+}
+
 .menu-toggle.active span:nth-child(1) {
   transform: translateY(10px) rotate(45deg);
 }
+
 .menu-toggle.active span:nth-child(2) {
   opacity: 0;
 }
+
 .menu-toggle.active span:nth-child(3) {
   transform: translateY(-10px) rotate(-45deg);
 }
-
 /* Mobile */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
+    margin-left: auto; /* <-- THIS pushes menu to right */
+  }
+
+  .nav-16 {
+    right: 20px; /* Optional: align dropdown under icon */
   }
 }
+
 
     section {
       padding: 80px 20px;
@@ -290,16 +309,22 @@
       align-items: center;
     }
 
-    .nav-16 {
-      display: flex;
-      gap: 2rem;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1rem 2rem;
-      border-radius: 2rem;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
-      border: 1px solid rgba(0, 255, 255, 0.15);
-    }
+    @media (min-width: 769px) {
+  .nav-16 {
+    display: flex;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    position: static;
+    width: auto;
+    flex-direction: row;
+  }
+}
+
 
     .nav-16 a {
       color: #0ff;
@@ -342,8 +367,6 @@
   <header>
   <div class="container">
 
-    <div class="brand">Portfolio</div>
-
     <!-- Hamburger -->
     <div class="menu-toggle" id="menu-toggle">
       <span></span>
@@ -352,13 +375,13 @@
     </div>
 
     <nav class="nav-16" id="nav-menu">
-      <a href="#"><i class="fas fa-home"></i> Home</a>
-      <a href="#"><i class="fas fa-info-circle"></i> About</a>
-      <a href="#"><i class="fas fa-briefcase"></i> Services</a>
-      <a href="#"><i class="fas fa-cogs"></i> Projects</a>
-      <a href="#"><i class="fas fa-lightbulb"></i> Skills</a>
-      <a href="#"><i class="fas fa-envelope"></i> Contact</a>
-    </nav>
+        <a href="index.html#home"><i class="fas fa-home"></i> Home</a>
+        <a href="index.html#about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="index.html#services"><i class="fas fa-briefcase"></i> Services</a>
+        <a href="project.html"><i class="fas fa-cogs"></i> Projects</a>
+        <a href="index.html#skills"><i class="fas fa-lightbulb"></i> Skills</a>
+        <a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
+      </nav>
 
   </div>
 </header>
